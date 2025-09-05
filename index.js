@@ -1,5 +1,5 @@
  const createElements=(arr)=>{
-    const htmlElements=arr.map(el=> `<span class="btn>${el} </span>`)
+    const htmlElements=arr.map(el=> `<span class="btn">${el} </span>`)
     return htmlElements.join(" ");
 }
 
@@ -10,7 +10,7 @@ function pronounceWord(word) {
 }
 
 
-
+// one: lesson gular api dhore niye aschi
 const loadLesson = () =>{
 
     fetch ("https://openapi.programming-hero.com/api/levels/all")
@@ -83,8 +83,8 @@ detailsBox.innerHTML=`<div class="div">
     <p>${word.sentence}</p>
 
 </div>
-<div class="div">
-    <h2 class=" font-bold">Synonyms</h2>
+<div class="">
+    <h2 class="font-bold">Synonyms</h2>
    <div class="">${createElements(word.synonyms)}</div>
 
 </div>
@@ -123,8 +123,8 @@ const displayWordData=(words)=>{
         <div class="text-2xl font-medium font-bangla">
          ${word.meaning?word.meaning:"not found"}  / ${word.pronunciation ?word.pronunciation :"invalid"}
         </div>
-        <div onclick="loadWordDetail(${word.id})" class="flex justify-between items-center">
-            <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
+        <div  class="flex justify-between items-center">
+            <button onclick="loadWordDetail(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
             <button onclick="pronounceWord('${word.word}')"  class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>
         </div>
     </div> `
@@ -135,7 +135,7 @@ const displayWordData=(words)=>{
 
 }
    
-
+// two : lesson gula ke dekhano hoise display te
 function displayLesson(lessons) {
     // console.log(lessons);
     const levelContainer = document.getElementById("level-container");
